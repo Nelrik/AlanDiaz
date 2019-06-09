@@ -1,0 +1,28 @@
+{% block content %}
+    <div piwik-content-block>
+        <table piwik-content-table>
+            <thead><tr><th>Action</th><th>Date</th><th>Facebook</th><th>Twitter</th><th>Instagram</th></tr></thead>
+            <tbody>
+                {% for data in allData %}
+                    <tr>
+                    <td>{{data['action']}}</td>
+                    <td>{{data['date']}}</td>
+                    {# {% if true %}<td>{{data['reactions']}}</td>{% endif %}
+                    {% if false %}<td>{{data['reactions']}}</td>{% endif %}
+                    {% if false %}<td>{{data['reactions']}}</td>{% endif %} #}
+                    
+                    <td>{% if data['facebook-reactions'] is defined  %}
+                    {{data['facebook-reactions']}}{% endif %}</td>
+                    
+                    <td>{% if data['twitter-reactions'] is defined  %}{{data['twitter-reactions']}}{% endif %}</td>
+
+                    <td>{% if data['instagram-reactions'] is defined  %}{{data['instagram-reactions']}}{% endif %}</td>
+                    
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    </div>
+{% endblock %}
