@@ -6,8 +6,7 @@
     {% endif %}
     {% if hasSVGLogo %}
         <img src='{{ logoSVG }}?matomo' tabindex="3"
-             alt="{% if isCustomLogo %}{{ 'General_PoweredBy'|translate }} {% endif %}Matomo"
-             class="{% if not isCustomLogo %}default-piwik-logo{% endif %}" />
+             alt="{% if isCustomLogo %}{{ 'General_PoweredBy'|translate }} {% endif %}" />
     {% else %}
         <img src='{% if useLargeLogo|default(false) %}{{ logoLarge }}{% else %}{{ logoHeader }}{% endif %}?matomo' alt="{% if isCustomLogo %}{{ 'General_PoweredBy'|translate }} {% endif %}Matomo" />
     {% endif %}
